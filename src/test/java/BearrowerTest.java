@@ -17,10 +17,10 @@ public class BearrowerTest {
     @Before
     public void before(){
         duderino = new Bearrower();
-        lordOfTheFlies = new Book();
-        lordOfTheRings = new Book();
-        lordOfTheLords = new Book();
-        lordyMcBookFace = new Book();
+        lordOfTheFlies = new Book(GenreType.DRAMA);
+        lordOfTheRings = new Book(GenreType.ADVENTURE);
+        lordOfTheLords = new Book(GenreType.RELIGIOUS);
+        lordyMcBookFace = new Book(GenreType.COMEDY);
         letterL = new Library(3);
     }
 

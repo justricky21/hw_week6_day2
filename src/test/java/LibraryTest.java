@@ -13,10 +13,10 @@ public class LibraryTest {
 
     @Before
     public void before(){
-        lordOfTheFlies = new Book();
-        lordOfTheRings = new Book();
-        lordOfTheLords = new Book();
-        lordyMcBookFace = new Book();
+        lordOfTheFlies = new Book(GenreType.DRAMA);
+        lordOfTheRings = new Book(GenreType.ADVENTURE);
+        lordOfTheLords = new Book(GenreType.RELIGIOUS);
+        lordyMcBookFace = new Book(GenreType.COMEDY);
         letterL = new Library(3);
     }
 
@@ -39,5 +39,12 @@ public class LibraryTest {
         letterL.addBook(lordOfTheRings);
         letterL.addBook(lordOfTheLords);
         assertEquals(3, letterL.getTotalBooks());
+    }
+
+    @Test
+    public void libraryHasOneAdventureBook(){
+        letterL.addBookOrganized(lordOfTheRings);
+        letterL.addBookOrganized(lordOfTheRings);
+        assertEquals(2, letterL.getTotalByGenre(GenreType.ADVENTURE));
     }
 }
